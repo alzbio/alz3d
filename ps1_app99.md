@@ -1,0 +1,1 @@
+<div id="viewport" role="NGL" data-proteins='[{"type": "data", "value": "startingProtBlock", "isVariable": "true", "chain_definitions": [], "history": {"code": "", "changes": ""}}]' data-backgroundcolor="white"></div>
