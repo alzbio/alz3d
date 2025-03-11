@@ -1,3 +1,1 @@
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous" type="text/javascript"></script>
+https://michelanglo.sgc.ox.ac.uk/data/0702e255-beb6-4ff3-b56b-e6f9103bbd50 
