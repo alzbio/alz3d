@@ -1,0 +1,20 @@
+
+gmx pdb2gmx -f ab42.pdb -o gro.gro 
+gmx editconf -f gro.gro -o box.gro -c -d 1.0 -bt cubic
+gmx solvate -cp box.gro -cs spc216.gro -o solv.gro -p topol.top
+gmx grompp -f ions.mdp -c solv.gro -p topol.top -o ions.tpr
+gmx genion -s ions.tpr -o sion.gro -p topol.top -pname NA -nname CL -neutral
+
+gmx grompp -f minim.mdp -c sion.gro -p topol.top -o em.tpr
+gmx mdrun -deffnm em -v
+
+gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx mdrun -deffnm nvt -v -nt 64
+
+gmx editconf -f gro.gro -o gro.pdb 
+gmx editconf -f sion.gro -o sion.pdb 
+gmx editconf -f em.gro -o em.pdb 
+
+
+
+gmx pdb2gmx -f 2beg.pdb -ignh -ter -o complex.gro
